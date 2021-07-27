@@ -15,7 +15,7 @@ public class InputScanner {
 		String name;
 		name = sc.nextLine();
 		
-		sc.nextLine();//nextIn()로 입력받은 정수값 뒤에 \r\n 값이 있어서 처리하기 위해 사용함
+		sc.nextLine();//nextIn()로 입력받은 정수값 뒤에 \r\n 제거하기 위해
 		
 		System.out.println("당신의 나이를 입력하세요. : ");
 		int age;

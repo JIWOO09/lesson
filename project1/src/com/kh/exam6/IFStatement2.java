@@ -13,7 +13,7 @@ public class IFStatement2 {
 		a= sc.nextInt(); sc.nextLine();
 		
 		
-		//이렇게도 가능함
+		//이렇게도 가능하다
 		a = a-1;
 		if(a > 0 && a < 12) {
 			System.out.printf("%d 분기입니다. \n" , (a / 3) + 1);

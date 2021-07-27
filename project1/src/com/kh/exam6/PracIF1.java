@@ -78,53 +78,64 @@ public class PracIF1 {
 		day = sc.nextInt(); sc.nextLine();
 		
 		
-		//switch 문
-		if(day >= 1 && day <= 31) {
-			switch(day & 7) {
-				case 0:
-					System.out.println("수요일 입니다."); break;
-				case 1:
-					System.out.println("목요일 입니다."); break;
-				case 2:
-					System.out.println("금요일 입니다."); break;
-				case 3:
-					System.out.println("토요일 입니다."); break;
-				case 4:
-					System.out.println("일요일 입니다."); break;
-				case 5: 
-					System.out.println("월요일 입니다."); break;
-				case 6:
-					System.out.println("화요일 입니다."); 
-			}
-			
-			switch(day % 7 ) {
-			//여러 케이스를 작성.
-			case 3 : case 4:
-					System.out.println("주말입니다."); break;
-			default :
-					System.out.println("주중입니다.");
-			}
-		} else {
-			System.out.println("1 ~ 31 사이의 값을 입력하세요. ");
-		}
-		
-		
-		
-		
-//		if(day >=1 && day <= 31) {
-//			if((day % 7) == 0) {
-//				System.out.println("수요일 입니다");
-//			} else if(day % 7 ) == 1) {
-//				System.out.println();
-		
+//		//switch 문
+//		if(day >= 1 && day <= 31) {
+//			switch(day & 7) {
+//				case 0:
+//					System.out.println("수요일 입니다."); break;
+//				case 1:
+//					System.out.println("목요일 입니다."); break;
+//				case 2:
+//					System.out.println("금요일 입니다."); break;
+//				case 3:
+//					System.out.println("토요일 입니다."); break;
+//				case 4:
+//					System.out.println("일요일 입니다."); break;
+//				case 5: 
+//					System.out.println("월요일 입니다."); break;
+//				case 6:
+//					System.out.println("화요일 입니다."); 
+//			}
 //			
+//			switch(day % 7 ) {
+//			//여러 케이스를 작성.
+//			case 3 : case 4:
+//					System.out.println("주말입니다."); break;
+//			default :
+//					System.out.println("주중입니다.");
+//			}
+//		} else {
+//			System.out.println("1 ~ 31 사이의 값을 입력하세요. ");
 //		}
+//		
 		
 		
 		
 		
-		
+		   if(day >=1 && day <= 31) { 
+		   }  if((day % 7) == 0) { 
+				   System.out.println("수요일 입니다"); 
+		  } else if (day % 7 == 1) {
+			  		System.out.println("목요일 입니다");
+		  
+		  } else if (day % 7 == 2) {
+			  System.out.println("금요일 입니다");
+			  
+		  } else if (day % 7 == 3) {
+			  System.out.println("토요일 입니다");
+			  
+		  } else if (day % 7  == 4) {
+			  System.out.println("일요일 입니다");
+			  
+		  } else if (day % 7  == 5) {
+			  System.out.println("월요일 입니다");
+			  
+		  } else if (day % 7  == 6) {
+			  System.out.println("목요일 입니다");
+		  }
 	}
+		
+	
 	
 	
 	
@@ -242,6 +253,7 @@ public class PracIF1 {
 	
 	
 	public static void ex7() {
+		
 		char op;
 		
 		System.out.println("사칙연산 기호를 입력하세요 : ");
@@ -275,13 +287,19 @@ public class PracIF1 {
 		
 		//ex1();
 		//ex2();
-		//ex3();
+		ex3();
 		//ex4();
-		ex5();
+		//ex5();
 		//ex6();
 		//ex7();
 	
 		
+		
 	}
 
 }
+
+
+
+
+

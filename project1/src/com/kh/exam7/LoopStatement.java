@@ -17,7 +17,7 @@ public class LoopStatement {
 	}
 	
 	public static void sample3() {
-		int i =1;//반복문 밖에 미리 초기값을 설정
+		int i =1;//반복문 밖에 미리 초기값을 설정함
 		//초기값을 생략
 		for(; i <= 5; i++) {
 			System.out.println(i + "입니다.");

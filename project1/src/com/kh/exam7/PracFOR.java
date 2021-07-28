@@ -51,7 +51,8 @@ public class PracFOR {
 		 * 
 		 */
 		
-		int num = 0;
+		int num = 0; //변수 초기화하는 법 > 에러뜨면 초기화하기
+		//for문 안에서는 변수선언 하지 않기 밖에 미리 선언하기
 		
 		for(int i = 1; i <=3; i++) {
 			System.out.println("정수 입력 (1 ~ 100) : ");
@@ -61,7 +62,7 @@ public class PracFOR {
 				System.out.println("정상적으로 입력하였습니다. ");
 				break;
 			} else {
-				if (i != 3) //두개의 피연산자가 다른지 검사 
+				if (i != 3) //두개의 피연산자가 다른지 검사 , 최대 3번째까지만 이라고 했으니까
 					{
 					System.out.println("다시 입력하세요 . 1 ~ 100 까지 만 입력하세요. ");
 				}else {

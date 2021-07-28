@@ -132,6 +132,7 @@ public class PracIF1 {
 			  
 		  } else if (day % 7  == 6) {
 			  System.out.println("목요일 입니다");
+		  
 		  }
 	}
 		
@@ -248,7 +249,71 @@ public class PracIF1 {
 	}
 	
 	
-	public static void ex6() {}
+	public static void ex6() {
+	
+	/*시간과 분을 따로 입력받고 추가로 분을 더 입력받아 입력받은 시간에서 추가로 입력한 분의
+	 * 더한 시간을 출력하도록 한다. 입력시간은 24시간 형식을 입력받고 출력은 오전/오후를 구분하는 
+	 * 12시간 형식을 출력하도록 한다.
+	 * 	- 24시간 형식의 12시 30분은 12시간의 형식의 오후 12시 30분
+	 *  - 24시간 형식의 00시 30분은 12시간의 형식의 오전 12시 30분
+	 *  - 24시간 형식의 23시 30분은 12시간의 형식의 오후 11시 30분
+	 *  - 24시간 형식의 11시 30분은 12시간의 형식의 오전 11시 30분
+	 *  
+	 *  
+	 *  예) 시간입력 : 23
+	 *  	분입력 : 50
+	 *  	추가 분 입력 : 20
+	 *  	입력 시간에서 20분을 추가한 시간은 오전 12시 10분 입니다.
+	 *  0~23시간의 입력범위를 넘기면 지정한 범위의 값을 입력하는 메세지 출력
+	 */
+	
+	int hour, minute, addMinute;
+	
+	System.out.println("시간 입력 : ");
+	hour = sc.nextInt(); sc.nextLine();
+	
+	System.out.println("분 입력 : ");
+	minute = sc.nextInt(); sc.nextLine();
+	
+	System.out.println("추가 분 입력 : ");
+	addMinute = sc.nextInt(); sc.nextLine();
+	
+	if( hour >= 0 && hour <= 23) {
+		if (minute >= 0 && minute <= 60) {
+			 //입력 분에 추가분을 더함
+			minute = minute + addMinute;
+			
+			//추가분을 더한 값이 60을 나누면 시간으로 환원하기 위한코드
+			if(minute >= 60 ) {
+				hour = hour +(minute / 60); // 넘은 시간 나누기 60
+				minute = minute % 60; //넘은 분 나누기 60으로 나머지 계한하기
+						
+			}
+			//24시간이 넘어가면 24로 나머지 계산하여 나머지값만 취함
+			if (hour >= 24) {
+					hour = hour % 24;
+			}
+			
+			if(hour == 0) {
+				System.out.printf("입력 시간에서 %d분을 추가한 시간은 오전 12시 %d분 " + addMinute, minute);
+			} else if(hour == 12) {
+				System.out.printf("입력 시간에서 %d분을 추가한 시간은 오전 12시 %d분 " + addMinute, minute);
+			} else if(hour >= 1 && hour <= 11) {
+				System.out.printf("입력 시간에서 %d분을 추가한 시간은 오전 12시 %d분 " + addMinute, hour, minute);
+			} else if(hour >= 13 && hour <= 23) {
+				System.out.printf("입력 시간에서 %d분을 추가한 시간은 오전 12시 %d분 " + addMinute,hour - 12 ,minute);
+			}	
+			
+		} else {
+			System.out.println("0 ~ 59 사이의 분을 입력하세요");
+		} 
+	} else {
+		System.out.println("0 ~ 23 사이의 시간을 입력하세요. ");
+	}
+	
+	
+	}
+	
 	
 	
 	
@@ -287,10 +352,10 @@ public class PracIF1 {
 		
 		//ex1();
 		//ex2();
-		ex3();
+		//ex3();
 		//ex4();
 		//ex5();
-		//ex6();
+		ex6();
 		//ex7();
 	
 		

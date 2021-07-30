@@ -177,10 +177,10 @@ public class PracFOR {
 
 			text = text + i + "";
 	
-	}
-	System.out.println(text);
+	 }
+		System.out.println(text);
 	
-}
+ }
 	
 	
 	public static void ex8() {
@@ -302,18 +302,10 @@ public class PracFOR {
 			}
 			
 		}
-		
-		
-		
-		
-		
+				
 	}
-	
-	
-	
-	
-
-	
+		
+		
 	
 	
 	
@@ -326,11 +318,41 @@ public class PracFOR {
 			//ex4();
 			//ex5();
 		//ex6();
-		ex7();
+		//ex7();
 		//ex8();
 		//ex9();
+		ex10();
 			
 			
 	}
 
+	
+
+	private static void ex10() {
+
+		/*
+		 * 출력을 다음과 같이 나오도록 한다
+		 * 
+		 *  1 2 3 4 5 6 7 
+		 *  8 9 10 11 12 13 14  7행 6열
+		 *  15 16 17 18 19 20 21
+		 *  22 23 24 25 26 27 28
+		 *  29 30 31 32 33 34 35
+		 *  36 31 38 39 40 41 42
+		 */
+		
+		int num = 1;
+	
+		for(int i = 1; i <= 6;  i++) {
+			for(int j = 1; j <= 7; j++ ) { 
+		
+				System.out.print(num + " "); 
+				num++;
+			}
+	       System.out.println();				
+		}
+	}
 }
+
+
+

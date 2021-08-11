@@ -3,32 +3,30 @@ package com.kh.exam10;
 import java.util.Arrays;
 
 class Subject {
-
 	private String name;
 	private int jumsu;
 	private static double[] dblGrade = {100.0, 90.0, 80.0, 70.0, 60.0, 0.0};
 	private static final String[] GRADE = {"A", "B", "C", "D", "F"};
-
 	
 	public Subject() {}
 	
-	public Subject (String name) {
+	public Subject(String name) {
 		this.name = name;
 	}
-
-	public Subject (String name, int num) {
+	
+	public Subject(String name, int num) {
 		this.name = name;
-		this.jumsu = jumsu;
+		this.jumsu = num;
 	}
 	
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
 	public String getName() {
 		return this.name;
 	}
-
+	
 	public void setJumsu(int num) {
 		if(Subject.dblGrade[Subject.dblGrade.length - 1] <= num && num <= Subject.dblGrade[0]) {
 			this.jumsu = num;
@@ -39,13 +37,17 @@ class Subject {
 	
 	public int getJumsu() {
 		return this.jumsu;
-	}	
+	}
 	
 	public boolean isValid() {
 		return this.jumsu == -1 ? false : true;
 	}
-
+	
+	/*
+	 * 입력된 점수에 따라 등급을 구하기 위한 메서드
+	 */
 	public String getGrade() {
+		// 점수가 최대값이랑 동일하면 GRADE[0] 의 등급으로 반환 GRADE[0] 은 A
 		if(this.jumsu == Subject.dblGrade[0]) {
 			return Subject.GRADE[0];
 		} else {
@@ -74,47 +76,39 @@ class Subject {
 		}
 
 	}
-
+	
 	public static int[] getRangeJumsu() {
 		return new int[] {(int)Subject.dblGrade[Subject.dblGrade.length - 1],
-					(int)Subject.dblGrade[0]};
-		}
-		
+				(int)Subject.dblGrade[0]};
+	}
 	
-	
-	public boolean equalSudject(Subject s) {
+	public boolean equalSubject(Subject s) {
 		return this.name.equals(s.name);
 	}
 	
 	public boolean gt(Subject s) {
 		return this.jumsu > s.jumsu;
 	}
+	
 	public boolean ge(Subject s) {
 		return this.jumsu >= s.jumsu;
 	}
+	
 	public boolean lt(Subject s) {
 		return this.jumsu < s.jumsu;
 	}
 	public boolean le(Subject s) {
 		return this.jumsu <= s.jumsu;
 	}
+	
 	public boolean eq(Subject s) {
 		return this.jumsu == s.jumsu;
 	}
+	
 	public boolean nq(Subject s) {
 		return this.jumsu != s.jumsu;
 	}
-
-	
-	
-	
-}	
-
-
-
-
-
-
+}
 
 public class Sample3 {
 
@@ -133,6 +127,7 @@ public class Sample3 {
 		 */
 		sub1.setJumsu(70);		// 점수를 별도의 Setter 이용하여 저장 가능
 		sub2.setJumsu(92);
+		
 		/*
 		 * 저장된 점수가 올바른 범위의 점수인지 확인하는 메서드이다.
 		 * 올바른 점수인 경우 true, 올바르지 않은 경우 false 를 반환한다.
@@ -158,23 +153,25 @@ public class Sample3 {
 		 * 아래의 메서드를 통해 입력 범위를 제한 할 수 있다.
 		 * 이미 점수가 입력되어 있는 상태에서 범위가 변경되면 기존 점수도 범위에 맞추어 재설정 되어야 한다.
 		 */
-		sub1.setRangeJumsu(0, 10);	// 점수의 입력 범위를 0 ~ 10 으로 한정한다.
+		Subject.setRangeJumsu(0, 10);	// 점수의 입력 범위를 0 ~ 10 으로 한정한다.
 		sub1.jumsuConversion();
 		sub2.jumsuConversion();
 		sub3.jumsuConversion();
-		// 점수의 입력 범위를 확인 할 수 있게 만들어 주는 메서드이다.
+		
 		System.out.println("점수 변환 확인 1 : " + sub1.getJumsu() + "|" + sub1.getName());
 		System.out.println("점수 변환 확인 2 : " + sub2.getJumsu() + "|" + sub2.getName());
 		System.out.println("점수 변환 확인 3 : " + sub3.getJumsu() + "|" + sub3.getName());
 		
-		
-		int[] rg = sub1.getRangeJumsu();
+		// 점수의 입력 범위를 확인 할 수 있게 만들어 주는 메서드이다.
+		int[] rg = Subject.getRangeJumsu();
 		System.out.println(Arrays.toString(rg));
+		
 		// 점수의 범위가 변경이 되면 등급 또한 변경된 범위에 맞추어 계산이 이루어져야 한다.
+		// 백분율 계산으로 변경.
 		System.out.println(sub1.getGrade());
 		
 		// 동일한 과목인지 비교하는 메서드이다.
-		if(sub1.equalSudject(sub2)) {
+		if(sub1.equalSubject(sub2)) {
 			System.out.println("동일한 과목 입니다.");
 		} else {
 			System.out.println("동일한 과목이 아닙니다.");
@@ -195,5 +192,5 @@ public class Sample3 {
 		}
 
 	}
-	
+
 }

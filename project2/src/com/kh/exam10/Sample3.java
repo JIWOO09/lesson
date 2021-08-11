@@ -1,7 +1,6 @@
 package com.kh.exam10;
 
-
-
+import java.util.Arrays;
 
 class Subject {
 
@@ -133,7 +132,7 @@ public class Sample3 {
 		 * 범위를 벗어난 값의 입력이 있는 경우 -1 이 저장되도록 한다.
 		 */
 		sub1.setJumsu(70);		// 점수를 별도의 Setter 이용하여 저장 가능
-		
+		sub2.setJumsu(92);
 		/*
 		 * 저장된 점수가 올바른 범위의 점수인지 확인하는 메서드이다.
 		 * 올바른 점수인 경우 true, 올바르지 않은 경우 false 를 반환한다.
@@ -160,10 +159,17 @@ public class Sample3 {
 		 * 이미 점수가 입력되어 있는 상태에서 범위가 변경되면 기존 점수도 범위에 맞추어 재설정 되어야 한다.
 		 */
 		sub1.setRangeJumsu(0, 10);	// 점수의 입력 범위를 0 ~ 10 으로 한정한다.
-		
+		sub1.jumsuConversion();
+		sub2.jumsuConversion();
+		sub3.jumsuConversion();
 		// 점수의 입력 범위를 확인 할 수 있게 만들어 주는 메서드이다.
-		int[] rg = sub1.getRangeJumsu();
+		System.out.println("점수 변환 확인 1 : " + sub1.getJumsu() + "|" + sub1.getName());
+		System.out.println("점수 변환 확인 2 : " + sub2.getJumsu() + "|" + sub2.getName());
+		System.out.println("점수 변환 확인 3 : " + sub3.getJumsu() + "|" + sub3.getName());
 		
+		
+		int[] rg = sub1.getRangeJumsu();
+		System.out.println(Arrays.toString(rg));
 		// 점수의 범위가 변경이 되면 등급 또한 변경된 범위에 맞추어 계산이 이루어져야 한다.
 		System.out.println(sub1.getGrade());
 		

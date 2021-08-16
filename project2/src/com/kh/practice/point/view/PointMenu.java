@@ -6,6 +6,7 @@ import java.util.Scanner;
 import com.kh.practice.point.controller.CircleController;
 import com.kh.practice.point.controller.RectangleController;
 
+
 public class PointMenu {
 	
 	private Scanner sc = new Scanner(System.in);

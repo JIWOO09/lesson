@@ -49,6 +49,7 @@ class Student extends Person {
 	}
 }
 
+
 class Sample1 {
 
 	public static void main(String[] args) {

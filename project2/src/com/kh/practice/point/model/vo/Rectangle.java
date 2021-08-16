@@ -2,6 +2,7 @@ package com.kh.practice.point.model.vo;
 
 public class Rectangle extends Point{
 	
+	
 	private int width;
 	private int height;
 	

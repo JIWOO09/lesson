@@ -2,6 +2,7 @@ package com.kh.practice.point.model.vo;
 
 public class Circle extends Point{
 	
+	
 	private int radius;
 	public Circle() {}
 	public Circle(int x, int y, int radius) {}

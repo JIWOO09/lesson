@@ -5,6 +5,7 @@ import com.kh.practice.snack.controller.*;
 import com.kh.practice.snack.veiw.*;
 
 
+
 public class Run {
 
 	public void SnackMenu() {}

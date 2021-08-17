@@ -4,7 +4,6 @@ package com.kh.practice.snack.veiw;
 import com.kh.practice.snack.controller.*;
 import java.util.Scanner;
 
-
 public class SnackMenu {
 	
 	private Scanner sc = new Scanner(System.in);

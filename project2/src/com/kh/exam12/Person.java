@@ -3,6 +3,7 @@ package com.kh.exam12;
 class Person {
 	
 	
+	
 	private String name;
 	private int age;
 	

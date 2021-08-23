@@ -1,0 +1,266 @@
+package com.kh.exam17;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+public class Sample1 {
+	
+	public static void ex1() {
+		List<Integer> aList = new ArrayList<Integer>();
+		
+		// 마지막 인덱스에 추가
+		aList.add(10);	aList.add(20);	aList.add(30);
+		System.out.println(aList);
+		
+		// 지정한 인덱스에 추가
+		aList.add(1, 40);
+		System.out.println(aList);
+		
+		// 지정한 인덱스의 데이터 수정
+		aList.set(2, 22);
+		System.out.println(aList);
+		
+		// 주어진 객체가 존재하는지 검색
+		boolean resBool = aList.contains(10);
+		System.out.println(resBool);
+		
+		resBool = aList.contains(20);
+		System.out.println(resBool);
+		
+		// 주어진 인덱스로 저장된 객체 검색
+		int resInt = aList.get(0);
+		System.out.println(resInt);
+		
+		// 인덱스의 범위를 벗어나면 에러 발생
+		// resInt = aList.get(5);
+		// System.out.println(resInt);
+		
+		// iterator() -> 반복자 객체를 반환
+		Iterator<Integer> iter = aList.iterator();
+		while(iter.hasNext()) {
+			System.out.println("Iterator 로 추출 -> " + iter.next());
+		}
+		
+		for(Integer i: aList) {
+			System.out.println("for each 로 추출 -> " + i);
+		}
+		
+		// 컬렉션이 비어 있는지 조사
+		// aList.clear();  // 컬렉션의 모든 객체 제거
+		resBool = aList.isEmpty();
+		System.out.println("aList의 내용이 비어있습니까? -> " + resBool);
+		
+		// 저장되어 있는 전체 객체 수
+		resInt = aList.size();
+		System.out.println("aList의 객체 수 -> " + resInt);
+		
+		// 주어진 인덱스로 객체 삭제
+		resInt = aList.remove(0);
+		System.out.println(resInt + "이(가) 삭제되어 " + aList + " 가 남았습니다.");
+		
+		// 주어진 객체로 찾아서 삭제(주의: 정수 데이터는 인덱스로 보기 때문에 Integer 로 랩핑해야 함)
+		// resBool = aList.remove(Integer.valueOf(22));
+		resBool = aList.remove(new Integer(22));
+		System.out.println("객체 삭제가 되었습니까? -> " + resBool);
+	}
+	
+	public static void ex2() {
+		/*
+		 * 사용자 입력으로 정수 데이터를 받아 ArrayList 에 저장 후
+		 * ArrayList에 저장된 모든 정수의 합을 구하여 출력한다.
+		 * (단, 사용자 입력은 한 번만 사용한다.)
+		 */
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 데이터 입력(공백을 구분자로 2개 이상 입력 가능) : ");
+		String[] inputs = sc.nextLine().split(" ");
+		List<Integer> iList = new ArrayList<Integer>();
+		
+		for(String s: inputs) {
+			iList.add(Integer.parseInt(s));
+		}
+		
+		int tot = 0;
+		for(int n: iList) {
+			tot += n;
+		}
+		System.out.println("사용자 입력 데이터 : " + iList);
+		System.out.println("사용자 입력 데이터의 총합 : " + tot);
+	}
+	
+	public static void ex3() {
+		/*
+		 * 사용자 입력으로 실수 데이터를 받아 ArrayList 에 저장 후
+		 * ArrayList에 저장된 모든 실수의 합과 평균을 구하여 출력한다.
+		 * (단, 사용자 입력은 한 번만 사용한다.)
+		 */
+		Scanner sc = new Scanner(System.in);
+		System.out.print("실수 데이터 입력(공백을 구분자로 2개 이상 입력 가능) : ");
+		String[] inputs = sc.nextLine().split(" ");
+		List<Double> dList = new ArrayList<Double>();
+		
+		for(String s: inputs) {
+			dList.add(Double.parseDouble(s));
+		}
+		
+		double tot = 0;
+		for(double n: dList) {
+			tot += n;
+		}
+		System.out.println("사용자 입력 데이터 : " + dList);
+		System.out.println("사용자 입력 데이터의 총합 : " + tot);
+		System.out.println("사용자 입력 데이터의 평균 : " + tot / dList.size());
+	}
+	
+	public static void ex4() {
+		/*
+		 * 다음의 요구사항을 잘 보고 요구사항에 맞도록 구현한다.
+		 * 	- 사용자 입력으로 정수 데이터를 받아 ArrayList 에 저장을 해야 한다.
+		 * 	- 사용자 입력으로 하나의 정수 데이터를 입력 할 수 있지만 2개 이상의 정수를 입력 하기도 한다.
+		 * 	- 동일한 정수 데이터는 ArrayList에 저장되지 않도록 한다.
+		 */
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 데이터 입력(공백을 구분자로 2개 이상 입력 가능) : ");
+		String[] inputs = sc.nextLine().split(" ");
+		List<Integer> iList = new ArrayList<Integer>();
+		
+		for(String s: inputs) {
+			int temp = Integer.parseInt(s);
+			if(!iList.contains(temp)) {
+				iList.add(temp);
+			}
+		}
+		
+		System.out.println("사용자 입력 데이터 : " + iList);
+	}
+	
+	public static void ex5() {
+		/*
+		 * 사용자 입력으로 최소값, 최대값, 갯수를 입력받아 다음 요구사항에 맞도록 구현한다.
+		 * 	- 최소값, 최대값은 랜덤을 통해 생성할 값의 범위이다.
+		 * 	- 갯수는 랜덤을 통해 생성할 값의 수량 이다.
+		 * 	- 생성된 랜덤값은 ArrayList 에 저장한다.
+		 * 	- ArrayList에 저장한 정수는 중복이 없어야 한다.
+		 */
+		Random rd = new Random();
+		Scanner sc = new Scanner(System.in);
+		System.out.print("최소값 최대값 입력 : ");
+		String[] minMax = sc.nextLine().split(" ");
+		System.out.print("갯수 입력 : ");
+		int min = Integer.parseInt(minMax[0]);
+		int max = Integer.parseInt(minMax[1]);
+		int count = sc.nextInt();
+		
+		List<Integer> iList = new ArrayList<Integer>();
+		
+		while(iList.size() < count) {
+			int temp = rd.nextInt(max - min + 1) + min;
+			if(!iList.contains(temp)) {
+				iList.add(temp);
+			}
+		}
+		
+		System.out.println("사용자 입력 데이터 : " + iList);
+	}
+	
+	public static void ex6() {
+		/*
+		 * 현재 날짜를 구한 후 ArrayList에 년, 월, 일, 시간, 분, 초 데이터가
+		 * 저장되도록 한다.
+		 */
+		SimpleDateFormat fDate = new SimpleDateFormat("yyyy MM dd hh mm ss");
+		List<Integer> dList = new ArrayList<Integer>();
+		String[] sDate = fDate.format(new Date()).split(" ");
+		for(String s: sDate) {
+			dList.add(Integer.parseInt(s));
+		}
+		System.out.println(dList);
+		
+//		GregorianCalendar gc = new GregorianCalendar();
+//		List<Integer> dList = new ArrayList<Integer>();
+//		dList.add(gc.get(Calendar.YEAR));
+//		dList.add(gc.get(Calendar.MONTH) + 1);
+//		dList.add(gc.get(Calendar.DATE));
+//		dList.add(gc.get(Calendar.HOUR));
+//		dList.add(gc.get(Calendar.MINUTE));
+//		dList.add(gc.get(Calendar.SECOND));
+	}
+	
+	public static void ex7() {
+		/*
+		 * 3초에 한번씩 정기적으로 1 ~ 99 사이의 랜덤값을 ArrayList 에 저장을 하도록 한다
+		 * ArrayList 에 저장하는 데이터는 10개로 제한한다.
+		 */
+		GregorianCalendar gcStart = new GregorianCalendar();
+		GregorianCalendar gcEnd = null;
+		Random rd = new Random();
+		List<Integer> iList = new ArrayList<Integer>();
+		while(iList.size() < 10) {
+			gcEnd = new GregorianCalendar();
+			if(((gcStart.get(Calendar.SECOND) + 3) % 60) == gcEnd.get(Calendar.SECOND)) {
+				iList.add(rd.nextInt(99) + 1);
+				System.out.println(iList);
+				gcStart = gcEnd;
+			}
+		}
+	}
+	
+	public static void ex8() {
+		/*
+		 * 3초에 한번씩 정기적으로 1 ~ 99 사이의 랜덤값을 ArrayList 에 저장을 할 때 저장 시간도
+		 * 같이 ArrayList에 저장하도록 하며 저장하는 데이터는 10개로 제한한다.
+		 * (단, 중복 데이터는 저장이 안되도록 하며, ArrayList를 2개 이용하도록 한다. 시간은 년월일
+		 * 시분초까지만 저장하도록 한다.)
+		 */
+		SimpleDateFormat df = new SimpleDateFormat("yyy-MM-dd hh:mm:ss");
+		GregorianCalendar gcStart = new GregorianCalendar();
+		GregorianCalendar gcEnd = null;
+		Random rd = new Random();
+		List<Integer> iList = new ArrayList<Integer>();
+		List<String> sList = new ArrayList<String>();
+		while(iList.size() < 10) {
+			gcEnd = new GregorianCalendar();
+			if(((gcStart.get(Calendar.SECOND) + 3) % 60) == gcEnd.get(Calendar.SECOND)) {
+				int temp = rd.nextInt(99) + 1;
+				if(!iList.contains(temp)) {
+					iList.add(temp);
+					sList.add(df.format(gcEnd.getTime()));
+					System.out.println(iList);
+					System.out.println(sList);
+				}
+				gcStart = gcEnd;
+			}
+		}
+	}
+	
+	public static void ex9() {
+		/*
+		 * ArrayList 에 다음의 단어를 미리 초기화 한 후 다음 요구사항에 맞는 프로그램을 작성한다.
+		 * 	- abstract, continue, for, new, switch, default, package,
+		 * 	  synchronized, boolean, do, if, private, this, break,
+		 * 	  double, implements, protected, throw, byte, else, import,
+		 * 	  public, throws, case, instanceof, return, catch, extends,
+		 * 	  int, short, try, char, final, interface, static, void,
+		 * 	  class, finally, long, float, super, while
+		 * 	- ArrayList에 저장된 문자열을 랜덤으로 출력하게 만든다.
+		 * 	- 랜덤으로 출력된 문자열을 사용자 입력으로 사용자가 입력하게 만든다.
+		 * 	- 사용자가 입력한 데이터가 출력된 문자열과 동일하면 다음 문자열이 다시 랜덤으로 출력되게 한다.
+		 * 	- 위 과정을 10번 반복하여 모든 문자열을 입력한 총 시간과 정확하게 입력한 문자열의 수, 잘못
+		 * 	  입력한 문자열의 수를 테이블 형태로 출력하게 한다.
+		 */
+	}
+
+	public static void main(String[] args) {
+		ex8();
+		// ex7();
+		// ex6();
+		// ex5();
+		// ex4();
+		// ex3();
+		// ex2();
+		// ex1();
+	}
+	
+	
+	
+
+}

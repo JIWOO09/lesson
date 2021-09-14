@@ -14,6 +14,9 @@ import oracle.jdbc.pool.OracleDataSource;
 public class OracleCloudConnect {
 
 	private final String DB_URL = "jdbc:oracle:thin:@mydb_medium?TNS_ADMIN=c:\\Users\\HP\\Wallet_myDB";
+	//private final String USERNAME = "user1";
+	//private final String PASSWORD = "KHpass1234567890";
+	//아이다랑 비밀번호를 파일화 해서 좀 더 보안이 되게끔
 	private Properties info = new Properties();
 	private OracleDataSource ods = null;
 	private OracleConnection conn = null;
@@ -23,8 +26,10 @@ public class OracleCloudConnect {
 	
 	// 초기화 블럭
 		{
+			//String userHome = System.getProperty("user.home");
 			// 사용자 홈 디렉터리 경로를 알아낸다.
-			
+			//info.load(new FileReader(userHome + "/oracle_connection.prop"));
+			//위 방법으로 연결 안되어서 userhome 지우고 나니(주석처리한 코드들) 연결 됨.
 			try {
 				info.load(new FileReader("oracle_connection.prop"));
 			} catch (FileNotFoundException e) {

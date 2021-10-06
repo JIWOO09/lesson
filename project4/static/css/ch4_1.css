@@ -1,0 +1,26 @@
+.side-menu{
+    list-style-type: none; /*앞 목록기호 없애기*/
+    background-color: rgb(158, 165, 147);
+    display: inline-block; /*배경 컬러 영역 제한하기*/
+    width: 350px;
+    margin: 0; padding: 0; /*여백 없애기*/
+}
+
+.menu-item a{
+    box-sizing: border-box;/*  테두리를 포함한 크기를 지정*/
+    display:block;
+    padding: 1em 2em;
+    text-decoration: none; /*밑줄이나 윗줄, 중간줄을 넣을때 : 기본 값으로 밑줄이 없는 보통글자*/
+    background-color: burlywood;
+    color: black;
+    font-weight: 700;
+}
+
+.menu-item a:hover{
+    background-color: darkred;/*마우스 영역에 갖다 대면 해당 영역 색상 변경*/
+    color: khaki;/*마우스 영역에 갖다 대면 해당 영역의 글자 색상 변경*/
+}
+
+a.active{
+    background-color: rgb(70, 90, 180); /*메뉴3의 배경색만 변경*/
+}

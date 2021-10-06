@@ -1,0 +1,99 @@
+/*전체 선택자*/
+*{
+    margin: 0; /*외부 여백*/
+    padding: 0; /*내부 여백*/
+}
+
+/*태그 선택자*/
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 4px;
+}
+/*별도로 지정 가능*/
+h2 {
+    text-decoration: underline;
+}
+
+#first {
+    background-color: azure;
+}
+
+#second {
+    background-color: cornsilk;
+}
+
+.cls-1{
+    color: darkblue;
+}
+
+.cls-2 {
+    color: greenyellow;
+    }
+
+.cls-3 {
+    background-color:lightcoral;
+}
+
+input[placeholder]{
+    background-color: skyblue;
+}
+
+input[type=number]{
+    background-color: tan;
+}
+
+[subject]{
+    margin: 16px;
+}
+
+/*키워드 사용*/
+[subject~=title] {
+    font-size: 18px;
+}
+
+[subject^=text] {
+    color: tomato;
+}
+
+[subject$=context] {
+    text-decoration:underline;
+}
+
+[subject*=body] {
+    background-color: rgb(202, 171, 172);
+}
+/*글자 굵게*/
+[subject|=bold]{
+    font-weight: bold;
+}
+/*글자 기울기*/
+[subject|=italic]{
+    font-style: italic;
+}
+
+ul {
+    margin-left : 36px;
+}
+
+/*ul의 자손 li까지 여백*/
+ul>li{
+    padding : 4px 8px;
+}
+
+ul>li>ol {
+    margin-left : 36px;
+}
+/*ul 태그의 후손*/
+ul li {
+    color : yellowgreen;
+}
+
+/*h2바로 뒤에 있는 한개의 p만*/
+h2+p{
+    background-color: silver;
+}
+
+/*h2 뒤에 있는 모든 p*/
+h2~p{
+    color: rgb(139, 37, 37);
+}

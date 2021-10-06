@@ -1,0 +1,64 @@
+table{
+   /* border-style: solid;
+    border-width: 1px;*/
+    border-collapse: collapse; /*이중 테두리 없애는*/
+    width: 100%;
+    table-layout: fixed;;
+}
+
+td,th{
+    /*border-style: solid;
+    border-width: 1px;*/
+   /* padding: 0 1em; 바깥 여백 top, bottom 0em, 왼오 1em */
+   padding-left: 1em;
+   padding-right: 1em;
+}
+
+ /*thead의 tr만*/
+thead > tr {
+    background-color: darksalmon;
+    color: ghostwhite;
+    border-bottom: 2px solid black;
+}
+
+tbody > tr:last-child{
+    border-bottom: 2px solid black;
+}
+
+tbody > tr:nth-child(2n){
+    background-color: rgb(135, 172, 240);
+}
+
+table .left{
+    text-align: left;
+}
+
+table .right{
+    text-align: right;
+}
+
+table .center{
+    text-align: center;
+}
+
+tbody > tr:hover { /*tbody 안에서만 hover*/
+    background-color: rgb(77, 77, 153);
+}
+
+/*창 크기가 변동되어도 크기 유지*/
+table .w-80{
+    width: 80px;
+}
+
+table .w-160{
+    width: 160px;
+}
+
+table .w-240{
+    width: 240px;
+}
+
+/*최소너비*/
+table .mw-240{
+    width: 240px;
+}

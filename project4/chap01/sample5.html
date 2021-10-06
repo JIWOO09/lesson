@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폼 관련 태그</title>
+</head>
+<body>
+<!--<form action="server/location" method="GET">-->
+    <form action="server/location" method="POST">
+        <fieldset>
+            <legend>입력</legend>
+            <input type="text" name="val">
+            <button type="submit">전송</button>
+        </fieldset>
+        
+        <h1>폼과 입력 양식 분리</h1>
+        <!--fieldset을 form 밖으로 빼냈음-->
+        <form id="f2" action="/server/location2" method="GET"></form>
+            <fieldset form="f2">
+                <legend>입력</legend>
+                <input type="text" name="val" form="f2">
+                <button type="submit" form="f2">Form2 전송</button>
+            </fieldset>
+
+            <form id="f3" action="/server/location3" method="GET">
+            <input type="text" name="val">
+            </form>
+            <button type="submit" form="f3">Form3 전송</button>
+
+
+            
+        <h1>input 태그</h1>
+        <!--파일 업로드 시 form의 추가 속성-->
+        <form action="/server/location4" method="GET">
+        <div>                                                         <!--최소 2자~ 최대 8자-->
+            텍스트 입력 : <input type="text" name="v1" value="date1" minlength="2" maxlength="8"
+            size="4" placeholder="텍스트 입력" required> <!--입력란에 잔상처럼 남아있는거--> <!--입력 위치 알려주는 팝업-->
+            <!--입력 양식 사이즈 한글이랑 사이즈가 맞음-->
+        </div>
+
+        <div>
+            패스워드  입력 : <input type="password" name="v2" value="date2" minlength="2" maxlength="8"
+            size="8" placeholder="암호 입력" required>
+        </div>
+        <div>
+            입력 숨김 : <input type="hidden" name="v3" value="date3" readonly>
+        </div>
+        <div>
+            체크 박스  : <input type="checkbox" id="c1" name="v4" value="date4"><label for="c1">가</label>
+            <input type="checkbox" id="c2" name="v4" value="date5"><label for="c2">나</label>
+            <input type="checkbox" id="c3" name="v4" value="date6"><label for="c3">다</label>
+        </div> <!--다중선택 가능, 활성/비활성 가능-->
+        <div>
+            라디오 버튼  : <input type="radio" id="r1" name="v5" value="date7"><label for="r1">가</label>
+            <input type="radio" id="r2" name="v5" value="date8"><label for="r2">나</label>
+            <input type="radio" id="r3" name="v5" value="date9"><label for="r3">다</label>
+        </div> <!--다중선택 불가능, 활성/비활성 불가-->
+        <div>                                            <!--자바스크립트 함수-->
+            각종 버튼  : <input type="button" value="버튼" onclick="alert('클릭')">
+            <input type="submit" value="전송">
+            <input type="reset" value="초기화">
+        </div>
+        <div>
+            이미지 : <input type="image" src="/static/icon/S.png" onclick="alert('이미지 설명')">
+        </div>
+        <div>
+            파일 선택 : <input type="file" name="v6" accept=".txt,.prop,image/png" multiple>
+        </div>
+        <div>
+            색 선택 : <input type="color" name="v7" oninput="color_out.value=this.value">
+            <output name="color_out"></output>
+        </div>
+        <div>
+            날짜 입력 : <input type="date" name="v8" value="2021-09-30" min="2021-01-01" max="2021-12-31">
+        </div>
+        <div>
+            시간 입력 : <input type="time" name="v9" value="15:30" min="09:00" max="11:59">
+        </div>
+        <div>
+            이메일 입력 : <input type="email" name="v10">
+        </div>
+        <div>
+            슬라이드 바 : <input type="range" name="v11" min="10" max="100" step="5" list="marking"> <!--5씩-->
+            
+            <datalist id="marking">
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50"></option>
+                <option value="60"></option>
+                <option value="70"></option>
+                <option value="80"></option>
+                <option value="90"></option>
+                <option value="100"></option>
+            </datalist>
+        </div>
+        <div>
+            <select name="v12" size="3" multiple>
+                <option value="s1">선택/콤보 박스1</option>
+                <option value="s2">선택/콤보 박스2</option>
+                <option value="s3" selected>선택/콤보 박스3</option>
+                <option value="s4">선택/콤보 박스4</option>
+                </select>
+        </div>
+        <div>
+            <select name="v13">
+                <optgroup label="분류1">
+                    <option value="s1">선택/콤보 박스1</option>
+                <option value="s2">선택/콤보 박스2</option>
+                </optgroup>
+                <optgroup label="분류2">
+                <option value="s3" selected>선택/콤보 박스3</option>
+                <option value="s4">선택/콤보 박스4</option>
+                </optgroup>
+                </select>
+        </div>
+        <div>
+            <textarea name="v14" cols="50" rows="5" minlength="10" maxlength="500" style="resize: none;"></textarea>
+        </div>
+        <div>
+            <progress value="20" max="100"></progress>
+        </div>
+        <div>
+            <meter value="20" min="0" max="100" low="25" high="75"></meter><br>
+            <meter value="50" min="0" max="100" low="25" high="75"></meter><br>
+            <meter value="85" min="0" max="100" low="25" high="75"></meter>
+        </div>
+        <div>
+            <button type="submit">전송</button>
+            <button type="reset">초기화</button>
+            <button type="button">버튼</button>
+        </div>
+    
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+/*마우스로 클릭시 */
+[class*=input]:active{
+    background-color: rgb(0, 255, 110);
+}
+
+/*마우스를 해당구역?에 올리면 */
+[class*=input]:hover{
+    background-color: seagreen;
+}
+
+[type=checkbox]:checked{
+    box-shadow: 0 0 0 2px rgb(255, 0, 0);
+}
+
+:checked+label{
+    color: rgb(0, 156, 218);
+}
+
+input:focus {
+    background-color: rgb(84, 46, 224);
+    border-width: 4px;
+}
+
+input:enabled{
+    background-color: rgb(132, 218, 210);
+}
+/*비활성화 된 부분임을 알려주는*/
+input:disabled{
+    background-color: rgb(0, 0, 0);
+}
+
+/*색변경*/
+:link{
+    color: rgb(0, 0, 0);
+}
+/*한번 클릭하고 나면 색 변경됨*/
+:visited {
+    color: orangered;
+}
+
+
+
+tr:first-child{
+    font-weight: bold;
+}
+
+/*특정 위치 지정*/
+td:nth-child(2n){
+    background-color: rgb(0, 156, 218);
+}
+
+
+/*홀수번째*/
+td:nth-child(2n-1){
+    background-color: rgb(63, 153, 4);
+}
+
+td:nth-child(3n){
+    background-color: rgb(203, 218, 0);
+}
+tr:last-child{
+    background-color: peachpuff;
+}
+
+h2:first-of-type{
+    background-color: rgb(148, 169, 190);
+}
+
+/*글자색 변경*/
+h2:nth-of-type(2n-1){
+    color:peru;
+}
+
+h2:last-of-type{
+    background-color: rgb(187, 190, 148);
+}
+
+/*첫번째 글자만 변경*/
+.f-latter::first-letter{
+    color: red;
+    font-size: 2em;
+}
+
+.f-line::first-line{
+    color: rgb(255, 0, 0);
+}
+/*드래그시 색깔변경*/
+::selection{
+    background-color: seagreen;
+}
+
+h2::after {
+    content: "😘";
+}
+h2::before{
+    content: "💕";
+}
+#id-color{
+    color: teal;
+}
+.cls-color{
+    color: violet;
+}
+span{
+    color: rgb(66, 46, 139) !important;
+}

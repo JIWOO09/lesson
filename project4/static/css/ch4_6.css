@@ -1,4 +1,4 @@
-*{
+*{ /*모든 요소 적용*/
     box-sizing: border-box;
     margin: 0; 
     padding: 0;

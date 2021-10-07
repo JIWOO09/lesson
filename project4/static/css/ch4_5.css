@@ -1,4 +1,4 @@
-<!--초기화하기-->
+/*초기화하기*/
 * {
     margin: 0; padding: 0;
     box-sizing: border-box;
@@ -21,7 +21,7 @@
 }
 
 .login-form-foot > span {
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .input-form {

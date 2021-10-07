@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+.table-section {
+    width: 840px;
+}
+
+.table {
+    border-top-style: solid;/*상단만 테두리 지붕처럼*/
+    border-width: 1px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table td, .table th {
+    border-bottom-style: solid;/*하단만 테두리 밑줄처럼*/
+    border-width: 1px;
+    border-color: rgb(175, 175, 175);
+    padding: 12px 16px;
+}
+ 
+
+.w-160 {
+    width: 160px; /*등록일 크기 지정*/
+}
+
+.column-title {
+    font-weight: bold;
+}
+
+.column-title > a {
+    text-decoration: none;
+    color: black;
+}
+
+.column-title >  a:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+    
+}
+
+.column-date {
+    text-align: center; /*글정렬 중앙으로*/
+    color: rgb(151, 148, 148);
+}
+
+.center {
+    text-align: center;
+}
+
+.paging {
+    margin: 24px 0; /*마진으로 위아래 여백*/
+}
+
+.paging > a {
+    display: inline-block;
+    width: 30px;  height: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.paging > .active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.first-page, .pre-page, .next-page, .last-page {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(173, 171, 171);
+   
+}

@@ -1,0 +1,18 @@
+*{
+    margin: 0em;
+    padding: 0em;
+}
+
+.blind {
+    color: rgb(17, 187, 17);
+    padding: 10em;
+}
+
+
+.block-btn {
+        background-color: rgb(28, 168, 0);
+        color: floralwhite;
+        padding: 0.5em 1em;
+        border-style: none;
+    }
+

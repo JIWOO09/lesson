@@ -1,0 +1,44 @@
+
+.title-1{
+    padding: 2px 0 0 10px;
+}
+
+.content-1{
+    padding: 2px 0 0 10px;
+}
+.content-1 > input {
+    height: 240px;
+    width: 160px;
+   
+}
+
+.uploadFile-1{
+    padding: 2px 0 0 10px;
+}
+
+.write-1 {
+    padding: 2px 0 0 150px;
+}
+
+table {
+    background-color: rgb(245, 239, 165);
+    font-size: 15px;
+}
+
+.tr-first {
+    background-color:rgb(255, 137, 101);
+}
+
+.tr-first > td {
+    text-align: center;
+    color: whitesmoke;
+}
+
+.tr-last {
+    background-color: rgb(255, 137, 101); 
+}
+
+.tr-last > td {
+    text-align: center;
+    color: whitesmoke;
+}

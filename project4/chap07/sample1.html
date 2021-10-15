@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/ch7_1.css">
+    <script type="text/javascript" src="/static/js/ch07_1.js"></script>
+
+</head>
+<body>
+    <h2>배열</h2>
+    <p>var 변수명 = [값1, 값2, 값3, ...];<br> <!--배열선언과 동시에 초기화-->
+        위와 같은 형식으로 사용.</p>
+    <p>배열에 담을 수 있는 데이터 타입(자료형)은 제한이 없다.</p>
+    <p>new 연산자와 Array 객체를 통해 생성 가능</p>
+    <p>var 변수명 = new Array();<br> <!--크기를 정하지 않은 배열선언-->
+        var 변수명 = new Array(크기);<br> <!--크기를 정한 배열 선언-->
+        var 변수명 = new Array(값1, 값2, ...);</p><!--new 연산자를 활용해서 초기화-->
+    <hr>
+    <h2>19단 출력</h2>
+    <div>
+        <input type="number" id="v1" min="1" max="19">
+        <button type="button" onclick="f1();">확인</button>
+        <label id="alert1" class="hidden">
+            <small>1 ~ 19 사이의 값으로만 입력하세요.</small>
+        </label>
+    </div>
+    <div id="res1"></div>
+    <hr>
+    <h2>로또 번호 자동 생성</h2>
+    <div>
+        <button type="button" onclick="f2();">생성</button>
+    </div>
+    <div id="res2"></div>
+</body>
+</html>

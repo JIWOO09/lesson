@@ -11,5 +11,4 @@ function addMenu(title) {
 
     document.getElementById("id_add_menu").value = "";
     document.getElementById("id_add_menu").focus();
-
 }

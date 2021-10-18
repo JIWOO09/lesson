@@ -11,13 +11,13 @@
         <form>
             <div class="input-form">
                 <label for="">Username or email</label>
-                <input type="text" name="" id="">
+                <input type="text" class="requires-error-input" onblur="requiredItem(this);">
             </div>
             <div class="input-form">
                 <label for="">Password</label>
                 <input type="password" name="" id="id_pass">
             </div>
-            <!--비밀번호 입력 시 번호가 보일 수 있게 체크하는-->
+            <!--비밀번호 입력 시 번호가 보일 수 있게 체크하는거 추가-->
             <div class="input-form">
                 <label><input type="checkbox" id="id_chk_show_pass" onclick="hiddenPass(this);">show password</label>
             </div>

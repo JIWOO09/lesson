@@ -1,0 +1,17 @@
+
+/*기본 설정*/
+section#main{
+    width: 960px;
+    margin: 0 auto;
+    background-color: rgb(140, 197, 212);
+}
+
+/*반응형 웹을 위한 media 쿼리*/
+/*창 크기가 960 > 640으로 작아지면 색깔 변경*/
+@media only screen and (max-width : 980px) {
+    section#main {
+        width: 640px;
+        margin: 0 auto;
+        background-color: rgb(209, 165, 114);
+    }
+}

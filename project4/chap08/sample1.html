@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/ch8_1.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/ch8_2.css"
+        media="screen and (max-width: 660px)">
+
+</head>
+<body>
+    <script>
+        window.onresize =
+            function(){
+                var w = document.getElementById("w");
+                var h = document.getElementById("h");
+                w.innerText = window.innerWidth;//내부사이즈
+                h.innerText = window.innerHeight;//내부사이즈
+            };
+            //innerHTML은 가져온 텍스트에 포함된 태그를 인식하여 태그를 적용시킨 후 문자를 보여줌
+            //innerText는 가져온 텍스트에 포함된 태그도 하나의 텍스트로 인식        
+    </script>
+    <section id="main">
+        <article>
+            브라우저 크키 width : <span id="w"></span>
+        </article>
+        <article>
+            브라우저 크키 height : <span id="h"></span>
+        </article>
+    </section>
+    
+</body>
+</html>

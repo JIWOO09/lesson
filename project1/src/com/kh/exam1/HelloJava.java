@@ -3,7 +3,21 @@ package com.kh.exam1;
 public class HelloJava {
 
 	public static void main(String[] args) {
+/*	접근범위        |메모리에 항상|비어있음을 의미|자바의 시작은  |args 문자열을 배열로 
+ * 	모든곳에서 접근가능|상주하도록   |반환값이 없다 |main으로(약속)|사용하겠다 라는 의미
+ */
 
+		
+/* 자바의 시작인 main에서 다른 클래스나 메소드를 호출해서 사용하는데 
+ * 막상 main이 다른곳에서 접근을 허용하지 않으면 문제가 생기기 때문에
+ * publi을 사용한다.
+ * main은 시스템 종료시까지 유지가 되어야 하기 때문에 static
+ * 반환값은 프로그램 종료 되기 전까지 사용되어야함으로 시작과 더불어 끝인 main은
+ * 반환값이 없다는 의미의 void가 쓰인다.
+ * String[] args 라서 선언하는 이유는 프로그램 실행 순간 외부값을 가져와서
+ * 프로그램 안에서 사용하고자 할 때 메모에서 저장할 공감을 미리 선언하는것.		
+*/		
+				
 		System.out.print("Hellojava");
 		
 		

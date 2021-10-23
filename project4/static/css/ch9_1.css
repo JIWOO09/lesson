@@ -11,33 +11,33 @@ h1 {
     margin: 12px;
 }
 
-
 .accordion .accordion-list {
-    border-left: 1px solid rgb(179, 179, 179);
-    border-right: 1px solid rgb(179, 179, 179);
-    border-radius:  4px;
     list-style-type: none;
-    padding-inline-start: 0px;
-    margin: 0;
+    /* padding-inline-start: 0px; */
+}
+
+.accordion .accordion-item {
+    border-left: 2px solid rgb(0, 0, 0);
+    border-right: 2px solid rgb(0, 0, 0);
 }
 
 .accordion .accordion-item:first-child {
-    border-top: 1px solid rgb(179, 179, 179);
+    border-top: 2px solid rgb(0, 0, 0);
     border-radius: 4px 4px 0 0;
 }
 
 .accordion .accordion-item:first-child .accordion-title {
-    border-top:none;
+    border-top-style: none;
     border-radius: 4px 4px 0 0;
 }
 
 .accordion .accordion-item:last-child {
-    border-bottom-style: 1px solid rgb(179, 179, 179);
+    border-bottom: 2px solid rgb(0, 0, 0);
     border-radius: 0 0 4px 4px;
 }
 
 .accordion .accordion-title {
-    border-top: 1px solid rgb(179, 179, 179);
+    border-top: 2px solid rgb(0, 0, 0);
     position: relative;
     cursor: pointer;
     padding: 1em;
@@ -45,28 +45,38 @@ h1 {
 }
 
 .accordion .accordion-title::after {
-    font-family:"Material Icons";
+    font-family: "Material Icons";
     font-size: 36px;
     content: "\e5cf";
     position: absolute;
-    right: 12px; top: 8px;
+    right: 12px;
+    top: 8px;
     transition: 0.5s;
 }
+
 .accordion .accordion-content {
     overflow: hidden;
     padding: 0 1em;
-    height: 0;
+    height: 0px;
     transition: 0.5s;
 }
 
-.accordion .accordion-title.active::after{
-    transform: rotate(-180deg);
+.accordion .accordion-title.active {
+    background-color: #e7f1ff;
+    color: #0c92ee;
     transition: 0.5s;
 }
+
+.accordion .accordion-title.active::after {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
+
 
 .accordion .accordion-content.open {
-    overflow: hidden;
-    height: fit-content;
+    border-top: 2px solid rgb(0, 0, 0);
+    /* overflow: hidden; */
+    height: auto;
     padding: 1em;
-    transition: 1.5s;
+    transition: 0.5s;
 }

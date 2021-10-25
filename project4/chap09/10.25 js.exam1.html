@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <!-- <button id="btn">클릭하세요</button>
+    위 시험문제를 밑 코드로 수정-->
+    <button type="button" id="btn">클릭하세요</button>
+    <script>
+        //var button = document.getElementsByclassName("btn");
+        //위 시험문제를 밑 코드로 수정
+        var button = document.getElementById("btn");
+        button.addEventListener('mouseover',
+        function() {
+            console.log('버튼이 클릭 되었습니다.');
+        });
+    </script>
+</body>
+</html>

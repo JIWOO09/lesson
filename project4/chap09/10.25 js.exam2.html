@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">  
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="btn">클릭하세요</button>
+    위 시험문제를 밑 코드로 수정-->
+    <button type="button" id="btn" >클릭 전</button>
+
+    <script>
+    var button = document.getElementById('btn');
+
+    button.addEventListener('click', 
+    function(){
+    //button.value = '클릭 후';
+    //아래 코드로 수정
+    button.innerText = '클릭 후';
+
+    button.style.backgroundColor = 'red';
+
+});;
+    </script>
+</body>
+</html>
